@@ -18,6 +18,9 @@ def predict():
     file = request.files['file']
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
+    
+    if not file.content_type.startswith('image'):
+        return jsonify({'error': 'File is not an image'}), 400
 
     try:
         img = Image.open(file.stream)
