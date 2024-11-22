@@ -1,18 +1,15 @@
-import os
-import numpy as np
 from flask import Flask, request, jsonify
-from tensorflow.keras.models import load_model
+from flask_cors import CORS
+import tensorflow as tf
+import numpy as np
 from PIL import Image
+import logging
 import io
 
 app = Flask(__name__)
+CORS(app)
 
-model = load_model('../models/wildlens10.h5')
-
-# A sample class list, replace with your own
-animal_classes = ['Cat','Dog','Elephant','Giraffe','Horse','Kangaroo','Lion','Panda','Penguin','Tiger'] 
-
-
+model = tf.keras.models.load_model('../models/wildlens10.h5')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -24,18 +21,16 @@ def predict():
         return jsonify({'error': 'No selected file'}), 400
 
     try:
-        # Load the image
-        img = Image.open(io.BytesIO(file.read()))
+        img = Image.open(file.stream)
         resize = tf.image.resize(img, (256,256))
         yhat = model.predict(np.expand_dims(resize/255, 0))
-
-        
         res=np.argmax(yhat, axis=1)[0]
         
-        # Get the predicted class name
-        predicted_animal = animal_classes[res]
+    
+        animals = ['Cat','Dog','Elephant','Giraffe','Horse','Kangaroo','Lion','Panda','Penguin','Tiger'] 
+        prediction = animals[res]
         
-        return jsonify({'animal': predicted_animal}), 200
+        return jsonify({'animal': prediction}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

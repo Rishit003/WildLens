@@ -3,8 +3,9 @@ import React from 'react';
 const Logo = () => {
   return (
     <div style={styles.logoContainer}>
-      <img src="./src/images/icon.png" height = "45" alt="logo" />
-      <h1 style={styles.logoText}>WildLens</h1>
+      <img src="./src/images/logo.png" height = "80px" alt="logo" />
+      <h1 style={styles.logoText}>Wild<img src="./src/images/search.png" height = "15px" alt="search" />Lens</h1>
+      
     </div>
   );
 };
@@ -14,12 +15,12 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '20px',  // Adds some space between the logo and uploader
   },
   logoText: {
-    fontSize: '32px',
-    color: 'white',  // You can change the color to match your brand
+    fontSize: '50px',
+    color: 'white',  
     fontWeight: 'bold',
+    margin : '10px'
   },
 };
 

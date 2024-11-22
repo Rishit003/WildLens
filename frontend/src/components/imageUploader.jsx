@@ -16,15 +16,21 @@ const ImageUploader = () => {
       <div
         {...getRootProps()}
         style={{
-          border: '2px dashed #ccc',
-          padding: '20px',
+          
+          border: '3px dashed white',
+          margin: '50px',
+          padding: '30px',
           width: '300px',
           textAlign: 'center',
           cursor: 'pointer',
+          backgroundColor:'#242424',
         }}
       >
         <input {...getInputProps()} />
-        <p>Drag & drop an image here, or click to select one</p>
+        <img src="./src/images/upload.png" height = "80px" alt="" />
+        <br />
+        Drag & drop an image, or click to select one
+        
       </div>
 
       {image && (

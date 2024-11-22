@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Logo from './components/logo'
+import Header from './components/header'
 import ImageUploader from './components/imageUploader'
 import Footer from './components/footer'
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Logo />
+      <Header />
       <ImageUploader />
       <Footer />
     </>
@@ -100,15 +100,7 @@ export default App
 //         )}
 //       </main>
 
-//       <footer>
-//         <div className="footer-content">
-//           <p>&copy; 2024 Animal Species Prediction | All rights reserved.</p>
-//           <div className="footer-links">
-//             <a href="/about">About</a>
-//             <a href="/contact">Contact</a>
-//           </div>
-//         </div>
-//       </footer>
+//       
 //     </div>
 //   );
 // }
