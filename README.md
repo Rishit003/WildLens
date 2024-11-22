@@ -1,8 +1,7 @@
 # WildLens
-## An Animal Prediction Website
 
-## Description
-Welcome to ***WildLens***, powered by cutting-edge technology and deep learning! This website allows you to upload an image of an animal, and its model will accurately predict the species it belongs to.
+### Description:
+An animal prediction website, powered by cutting-edge technology and deep learning! This website allows you to upload an image of an animal, and its model will accurately predict the species it belongs to.
 
 Using a ***Convolutional Neural Network (CNN)***, a type of deep learning model renowned for its exceptional image classification capabilities, this system is trained on a vast dataset of animal images. Once you upload your image, the model processes it through multiple layers of convolution, pooling, and classification, ultimately delivering a prediction with remarkable accuracy.
 
