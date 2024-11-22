@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-const ImageUploader = () => {
+const Prediction = () => {
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState(null); 
   const [loading, setLoading] = useState(false);
@@ -76,7 +76,7 @@ const ImageUploader = () => {
 
       {image && (
         <div style={{ margin: '20px'}}>
-          <h2>Uploaded Image:</h2>
+          <h2>You Uploaded:</h2>
           <img src={image} alt="uploaded" style={{ width: '100%', maxWidth: '300px', border: '3px dashed white'}} />
         </div>
       )}
@@ -96,13 +96,13 @@ const ImageUploader = () => {
 
       {/* Button to start a new upload */}
       {prediction && !loading && (
-        <div style={{ marginTop: '20px' }}>
-          <button onClick={handleNewUpload} style={{ padding: '10px 20px', cursor: 'pointer', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px' }}>
-            NEW Upload
+        <div>
+          <button onClick={handleNewUpload} style={{ margin: '30px', padding: '10px', cursor: 'pointer', backgroundColor: '#242424',border: '3px solid white', borderRadius: '20px' }}>
+            New Upload
           </button>
         </div>
       )}
     </div>
   );
 };
-export default ImageUploader;
+export default Prediction;

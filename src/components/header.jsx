@@ -4,8 +4,7 @@ const Logo = () => {
   return (
     <div style={styles.logoContainer}>
       <img src="./src/images/logo.png" height = "80px" alt="logo" />
-      <h1 style={styles.logoText}>Wild<img src="./src/images/search.png" height = "15px" alt="search" />Lens</h1>
-      
+      <h1 style={styles.logoText}>Wild<img src="./src/images/search.png" height = "30px" alt="search" />Lens</h1>
     </div>
   );
 };
