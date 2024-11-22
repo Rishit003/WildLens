@@ -7,7 +7,7 @@ import io
 
 app = Flask(__name__)
 
-model = load_model('./models/wildlens10.h5')
+model = load_model('../models/wildlens10.h5')
 
 # A sample class list, replace with your own
 animal_classes = ['Cat','Dog','Elephant','Giraffe','Horse','Kangaroo','Lion','Panda','Penguin','Tiger'] 
