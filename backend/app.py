@@ -3,7 +3,6 @@ from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-import logging
 import io
 
 app = Flask(__name__)
@@ -22,9 +21,14 @@ def predict():
 
     try:
         img = Image.open(file.stream)
-        resize = tf.image.resize(img, (256,256))
-        yhat = model.predict(np.expand_dims(resize/255, 0))
-        res=np.argmax(yhat, axis=1)[0]
+        img = img.convert("RGB")
+        img_array = np.array(img)
+        img_resized = tf.image.resize(img_array, (256, 256))
+        img_resized = img_resized / 255.0
+        img_resized = np.expand_dims(img_resized, axis=0)
+        
+        yhat = model.predict(img_resized)
+        res = np.argmax(yhat, axis=1)[0]
         
     
         animals = ['Cat','Dog','Elephant','Giraffe','Horse','Kangaroo','Lion','Panda','Penguin','Tiger'] 
