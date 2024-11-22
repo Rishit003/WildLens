@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import Logo from './components/logo'
+import ImageUploader from './components/imageUploader'
+import Footer from './components/footer'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <h1>WildLens</h1>
-        <button>Uppload an image</button>
-      </div>
+      <Logo />
+      <ImageUploader />
+      <Footer />
     </>
   )
 }
