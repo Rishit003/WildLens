@@ -46,7 +46,6 @@ const Prediction = () => {
     setImage(null);
     setPrediction(null);
     setLoading(false);
-    window.location.reload();
   };
 
   return (

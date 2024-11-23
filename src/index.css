@@ -5,6 +5,7 @@
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0,0.4)),url(images/background.png);
   background-size: contain;
+  background-attachment: fixed;
 }
 
 body {
