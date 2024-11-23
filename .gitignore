@@ -9,7 +9,6 @@ lerna-debug.log*
 
 api/ModelTraining
 node_modules
-dist
 dist-ssr
 *.local
 
