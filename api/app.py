@@ -7,7 +7,7 @@ from PIL import Image
 import io
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["http://localhost:5173", "https://wildlens-tco6.onrender.com"])
 
 model = tf.keras.models.load_model('./models/wildlens10.h5')
 
