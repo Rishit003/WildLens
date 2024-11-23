@@ -21,7 +21,7 @@ const Prediction = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://wildlens-t1wk.onrender.com/predict', {
+      const response = await fetch('https://wildlens-t1wk.onrender.com/api/predict', {
         method: 'POST',
         body: formData,
       });
