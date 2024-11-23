@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import upload from '../images/upload.png'
 
 const Prediction = () => {
   const [image, setImage] = useState(null);
@@ -66,7 +67,7 @@ const Prediction = () => {
           }}
         >
           <input {...getInputProps()} />
-          <img src="./src/images/upload.png" height="80px" alt="" />
+          <img src={upload} height="80px" alt="" />
           <br />
           Drag & drop an image, or click to select one
         </div>
