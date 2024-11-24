@@ -1,6 +1,132 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-size: 16px;
+  margin: auto auto; 
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.375rem;
+  margin: 0.625rem;
+}
+
+.image-uploader{
   text-align: center;
+}
+
+.upload-container {
+  border: 2px dashed grey;
+  border-radius: 1.875rem;
+  margin: 3.125rem;
+  padding: 1.875rem;
+  width: 18.75rem; 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(100, 100, 100, 0.4));
+}
+
+
+.upload-container img {
+  height: 5rem;
+}
+
+.uploaded-image{
+  margin: 0.625rem;
+}
+
+.uploaded-image img {
+  width: 100%;
+  max-width: 18.75rem; 
+  border: 1px solid white;
+  border-radius: 1.875rem;
+}
+
+.new-upload{
+  text-align: center;
+}
+
+.new-upload button{
+  color: white;
+  margin: 1.875rem; 
+  width: 12.5rem; 
+  cursor: pointer;
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(100, 100, 100, 0.4));
+  border: 2px solid white;
+  border-radius: 1.875rem; 
+}
+
+
+footer {
+  text-align: center;
+  margin: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-icon {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 3.125rem; 
+}
+
+
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 3.125rem; 
+  }
+
+  .upload-container {
+    width: 15.625rem; 
+    padding: 1.25rem; 
+  }
+
+  .uploaded-image img {
+    max-width: 15.625rem; 
+  }
+
+  .new-upload button {
+    width: 11.25rem; 
+  }
+
+  .social-icon {
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text{
+    font-size: 2.961rem;
+  }
+  
+  .upload-container {
+    width: 12.5rem; 
+    padding: 1rem; 
+  }
+
+  .uploaded-image img {
+    max-width: 12.5rem;
+  }
+
+  .new-upload button {
+    width: 10rem;
+  }
+
+  .social-icon {
+    height: 2rem;
+  }
 }

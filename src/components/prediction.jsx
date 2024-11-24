@@ -51,50 +51,36 @@ const Prediction = () => {
   return (
     <div className="image-uploader">
       {!image && (
-        <div
-          {...getRootProps()}
-          style={{
-            border: '2px dashed white',
-            borderRadius: '30px',
-            margin: '50px',
-            padding: '30px',
-            width: '300px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            backgroundColor: 'black',
-            backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8),rgba(100, 100, 100,0.4))'
-          }}
-        >
+        <div className='upload-container'{...getRootProps()}>        
           <input {...getInputProps()} />
-          <img src={upload} height="80px" alt="" />
-          <br />
+          <img src={upload} alt="upload-icon" />
           Drag & drop an image, or click to select one
         </div>
       )}
 
       {image && (
-        <div style={{ margin: '10px'}}>
+        <div className='uploaded-image'>
           <h2>Uploaded Image:</h2>
-          <img src={image} alt="uploaded" style={{ width: '100%', maxWidth: '300px', border: '1px solid white', borderRadius: '30px'}} />
+          <img src={image} alt="uploaded"/>
         </div>
       )}
 
       {loading && (
-        <div style={{ margin: '10px' }}>
+        <div>
           <p>Loading prediction...</p>
         </div>
       )}
 
       {prediction && !loading && (
-        <div style={{ margin: '10px' }}>
+        <div>
           <h2>Animal Predicted as : {prediction}</h2>
           <h2></h2>
         </div>
       )}
 
       {prediction && !loading && (
-        <div>
-          <button onClick={handleNewUpload} style={{color:'white', margin: '30px', width: '200px', cursor: 'pointer', backgroundColor: 'black',backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8),rgba(100, 100, 100,0.4))',border: '2px solid white', borderRadius: '30px' }}>
+        <div className='new-upload'>
+          <button onClick={handleNewUpload}>
             <h2>Upload New</h2>
           </button>
         </div>
