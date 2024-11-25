@@ -9,7 +9,7 @@ import io
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173", "https://wildlens-tco6.onrender.com"])
 
-model = tf.keras.models.load_model('./models/wildlens15.h5')
+model = tf.keras.models.load_model('./models/wildlens12.h5')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -35,7 +35,7 @@ def predict():
         res = np.argmax(yhat, axis=1)[0]
         
     
-        animals = ['Bull','Cat','Chicken','Dog','Elephant','Giraffe','Homo Sapien','Horse','Kangaroo','Lion','Panda','Penguin','Sheep','Squirrel','Tiger'] 
+        animals = ['Bull','Cat','Chicken','Dog','Elephant','Giraffe','Homo Sapien','Panda','Penguin','Sheep','Squirrel','Tiger'] 
         prediction = animals[res]
         
         return jsonify({'animal': prediction}), 200
